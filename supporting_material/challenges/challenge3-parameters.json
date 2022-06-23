@@ -1,11 +1,11 @@
 [
     {
         "ParameterKey": "myVPC",
-        "ParameterValue": "vpc-049aec40a1d6c62ad"
+        "ParameterValue": "vpc-08b861d83bc8c5c11"
       },
       {
         "ParameterKey": "SubnetForServer",
-        "ParameterValue": "subnet-086fb2bdbcbd5fd67"
+        "ParameterValue": "subnet-03fe07fb0d5864074"
       },
       {
         "ParameterKey": "AMItoUse",

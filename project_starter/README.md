@@ -1,11 +1,30 @@
-### Project Title - Deploy a high-availability web app using CloudFormation
-This folder provides the starter code for the "ND9991 - C2- Infrastructure as Code - Deploy a high-availability web app using CloudFormation" project. This folder contains the following files:
+## ND9991 - C2- Infrastructure as Code - Supporting Material and Starter Code
+This folder provides the supporting material and starter code for the "ND9991 - C2- Infrastructure as Code" course. This folder contains the following folders:
+1. project_starter - It contains the starter code.
+2. supporting_material - It contains the essential files (.yml, .json, .bat, .sh, and .jpeg) that were referred in the different lessons of this course.
+
+In addition to the current repo, there is one more repository, [nd9991-c2-Infrastructure-as-Code-v1-Exercises_Solution](https://github.com/udacity/nd9991-c2-Infrastructure-as-Code-v1-Exercises_Solution) that contains the solution to the exercises and video demos.  
+
+### Dependencies
+##### 1. AWS account
+You would require to have an AWS account to be able to build cloud infrastructure.
+
+##### 2. VS code editor
+An editor would be helpful to visualize the image as well as code. Download the VS Code editor [here](https://code.visualstudio.com/download).
+
+##### 3. An account on www.lucidchart.com
+A free user-account on [www.lucidchart.com](www.lucidchart.com) is required to be able to draw the web app architecture diagrams for AWS.
 
 
-#### final-project-starter.yml
-Students have to write the CloudFormation code using this YAML template for building the cloud infrastructure, as required for the project. 
-
-#### server-parameters.json
-Students may use a JSON file for increasing the generic nature of the YAML code. For example, the JSON file contains a "ParameterKey" as "EnvironmentName" and "ParameterValue" as "UdacityProject". 
-
-In YAML code, the `${EnvironmentName}` would be substituted with `UdacityProject` accordingly.
+### How to run the supporting material?
+You can run the supporting material in two easy steps:
+```bash
+# Ensure that the AWS CLI is configured before runniing the command below
+# Create the network infrastructure
+# Check the region in the create.sh file
+./create.sh myFirstStack IAC-network.yml IAC-network-params.json
+# Create servers
+# Change the AMI ID and key-pair name in the servers.yml
+# Check the region in the update.sh file
+./update.sh mySecStack servers.yml IAC-network-params.json
+```

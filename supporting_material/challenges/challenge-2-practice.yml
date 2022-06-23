@@ -79,8 +79,8 @@ Resources:
         - Key: Name
           Value: !Sub ${Environment} NAT Gateway
   EIP:
-    DependsOn: VPCGatewayAttachment
     Type: AWS::EC2::EIP
+    DependsOn: VPCGatewayAttachment
 
   PrivateRouteTable:
     Type: AWS::EC2::RouteTable
@@ -110,13 +110,13 @@ Resources:
       GatewayId:
         Ref: InternetGateway
 
-  PrivateRoute:
+  PrivateRouteRS:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: PublicRouteTable
+        Ref: PrivateRouteTable
       DestinationCidrBlock: 0.0.0.0/0
-      GatewayId:
+      NatGatewayId:
         Ref: NAT
 
   PublicSubnetRouteTableAssociation:
